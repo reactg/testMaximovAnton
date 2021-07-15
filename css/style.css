@@ -1,0 +1,283 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+.container{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 20px;
+    margin: 20px;
+    background: url(https://images.wallpaperscraft.ru/image/smajl_nadpis_ruka_hello_118043_1920x1200.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: 900ms all ease;
+}
+
+.burger-menu{
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    overflow: hidden;
+    transition: 0.6s linear; 
+    margin: 0;
+    padding: 0;
+    width: 160px;
+    height: 160px;
+    font-size: 0;
+    box-shadow: none;
+    border:none;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.burger-menu.active{
+    background-color: #e70d44;
+}
+
+.burger-menu:before{
+    content:'';
+    position: absolute;
+    width: 152px;
+    height: 152px; 
+    top: 0;
+    right: 0;
+    transition: 0.6s linear; 
+    user-select: none;
+}
+
+.burger-menu:hover:before{
+    content:'';
+    position: absolute;
+    z-index: 2;
+    background-color: #e70d44;
+    width: 160px;
+    height: 160px; 
+}
+
+.burger-navigation{
+    top: 73px;
+    right: 66px;
+    position: absolute;
+    transition: 0.3s linear;
+    width: 27px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    z-index: 3;
+}
+
+.line {
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 0px;
+    right: 18px;
+    width: 26px;
+    height: 3px;
+    background: #fff;
+    transition: 0.3s linear; 
+}
+.line::before {
+    content:'';
+    display: block;
+    position: absolute;
+    top: -9px;
+    left: 0px;
+    right: 18px;
+    width: 22px;
+    height: 3px;
+    background: #fff;
+    transition: 0.3s linear; 
+}
+.line::after {
+    content:'';
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 0px;
+    right: 18px;
+    width: 14px;
+    height: 3px;
+    background: #fff;
+    transition: 0.3s linear; 
+}
+
+.burger-menu:hover span {
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 0px;
+    right: 18px;
+    width: 14px;
+    height: 3px;
+    background: #fff;
+    transition: 0.3s linear; 
+}
+
+.burger-menu:hover span::before {
+    content:'';
+    display: block;
+    position: absolute;
+    top: -9px;
+    left: 0px;
+    right: 18px;
+    width: 26px;
+    height: 3px;
+    background: #fff;
+    transition: 0.3s linear; 
+}
+
+.burger-menu:hover span::after {
+    content:'';
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 0px;
+    right: 18px;
+    height: 3px;
+    background: #fff;
+    width: 22px;
+}  
+
+.burger-navigation.active span{
+    background: none;
+}
+
+.burger-navigation.active span::before{
+    content:'';
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 0px;
+    right: 18px;
+    width: 26px;
+    height: 3px;
+    background: #fff;
+    transition: 0.3s linear;
+    bottom: 20px;
+    transform: rotate(45deg);
+}
+
+.burger-navigation.active span:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 0px;
+    right: 18px;
+    width: 26px;
+    height: 3px;
+    background: #fff;
+    transition: 0.3s linear;
+    bottom: 20px;
+    transform: rotate(-45deg);
+}
+
+.wrapper-menu{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    width: calc(100% - 20%);
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+    transition: 900ms all ease;
+    animation-duration: 0.6s;
+    background: url(https://images.wallpaperscraft.ru/image/velosiped_rozovyj_svetlyj_116948_1920x1200.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.wrapper-menu.active{
+    transition: 900ms all ease;
+    position: fixed;
+    right: 0;
+    display: flex;
+    background: url(https://images.wallpaperscraft.ru/image/velosiped_rozovyj_svetlyj_116948_1920x1200.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: calc(100% - 12%);
+    opacity: 1;
+    z-index: 1;
+    pointer-events: all;
+}
+
+.card{
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+.frontSide,
+.backSide{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    transition: transform .6s linear;
+}
+
+.frontSide{
+    background: url(https://images.wallpaperscraft.ru/image/nochnoj_gorod_ulitsa_avtomobil_113387_1920x1080.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transform: perspective(500px) rotateY(0deg);
+    backface-visibility: hidden;
+    z-index: 1;
+}
+
+.frontSide.activeCard{
+    transform: perspective(500px) rotateY(180deg);
+    backface-visibility: hidden;
+    z-index: 1;
+}
+
+.backSide{
+    transform: perspective(500px) rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+.backSide.activeCard{
+    position: relative;
+    backface-visibility: hidden;
+    border: 2px solid black;
+    transform: perspective(500px) rotateY(360deg);
+}
+iframe{
+    
+}
+h3{
+    position: absolute;
+    margin: 0 auto;
+    width: fit-content;
+    width:-moz-fit-content;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
